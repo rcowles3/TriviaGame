@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trivia Game - Ryan Cowles</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<!-- Psuedo Code
+	1. HTML Structure of game needs to be built.
+	2. When page loads, a start button will need to be pressed in order to start the game.
+	3. After button is pressed, questions will populate, and a timer countdown will begin.
+	4. Each question must consist of radio buttons that are multiple choice anserwrs for each question.
+	5. After time countdown hits 0, user will be shown a new page with correct answers, wrong answers, and unanswered questions. Regardless if they selected an answer for each question.
+ -->
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>Totally Trivial Trivia!</h1>
+        <!-- <div class="gameProcess"></div> -->
+        <div id="timer"></div>
+        <div class="htmlQuestions h3"></div>       
+        <div class="htmlAnswers h4"></div>
+
+
+        <!-- Javascript to load after all HTML has been processed -->
+        <script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+
+</html>
