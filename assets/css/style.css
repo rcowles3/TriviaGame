@@ -3,13 +3,18 @@
 	padding: 30px;
 }
 
-.htmlQuestions {
+.questions {
 	text-align: center;
-
+	display: block;
+	font-size: 24px;
+	margin-top: 15px;
 }
 
-.htmlAnswers {
+/*label {
 	color: blue;
-	margin: 20px;
+	font-size: 16px;
+}*/
 
-}
+/*.btn-group {
+	margin-top: 15px;
+}*/
