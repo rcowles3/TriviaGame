@@ -1,43 +1,49 @@
 .btn {
-	margin-top: 60px;
-	padding: 30px;
+    margin-top: 60px;
+    padding: 30px;
+    font-family: 'Bilbo', cursive;
 }
 
+h3,
 .questions {
-	text-align: center;
-	display: block;
-	font-size: 240px;
-	margin-top: 15px;
+    font-family: 'BilboBilbo', cursive;
+    font-size: 30px;
 }
 
-/*label {
-	color: blue;
-	font-size: 16px;
-}*/
-
-/*.btn-group {
-	margin-top: 15px;
-}*/
+h4,
+.answers {
+    font-family: 'Bilbo', cursive;
+    font-size: 20px;
+}
 
 .jumbotron {
-	background: transparent;
-	color: white;
+    background: transparent;
+    color: white;
+    font-family: 'Bilbo', cursive;
 }
 
 body {
-    background: 
-    linear-gradient( 
-    	rgba(0, 0, 0, 0.5), 
-    	rgba(0, 0, 0, 0.5)), 
-    url(../images/hpBackground2.jpg) no-repeat center center fixed;
+    background: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images/marauders.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-  	color: white;
-  	text-align: center;
-  	margin-bottom: 50px;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
+.start-button {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    color: white;
+    font-family: 'Bilbo', cursive;
+    font-size: 30px;
+}
 
-
+.btn:hover {
+    background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+    color: white;
+    font-family: 'Bilbo', cursive;
+    font-size: 30px;
+    ;
+}

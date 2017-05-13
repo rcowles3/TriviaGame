@@ -10,19 +10,20 @@
  */
 
 // On game load
-
 $(document).ready(function() {
 
     // VARIABLES 
     // ===============================================
-    // var questionsArray = ["Who does Harry accidentally 'blow up' causing him to run away from Privet Drive?", "Which type of magical creature carries Sirius Black away from Hogwarts?"];
-    // var answersArray = [
-    //     ["Marge Dursley", "Petunia Dursley", "Vernon Dursley", "Dudley Dursley"],
-    //     ["Dragon", "Hippogriff", "Unicorn", "Thestral"]
-    // ];
-    // var correctAnswers = 0;
-    // var wrongAnswers = 0;
-    // var unanswered = 0;
+    var questionsArray = ["Who does Harry accidentally 'blow up' causing him to run away from Privet Drive?", "Which type of magical creature carries Sirius Black away from Hogwarts?", "Which of the following was NOT a Death Eater?", "Who destroys a horcrux first?"];
+    var answersArray = [
+        ["Marge Dursley", "Petunia Dursley", "Vernon Dursley", "Dudley Dursley"],
+        ["Dragon", "Hippogriff", "Unicorn", "Thestral"],
+        ["Lucious Malfoy", "Bathilda Bagshot", "Bartemious Crouch, Jr", "Bellatrix Lestrange"],
+        ["Ron Weasley", "Hermoine Granger", " Albus Dumbledore", "Harry Potter"]
+    ];
+    var correctAnswers = 0;
+    var wrongAnswers = 0;
+    var unanswered = 0;
 
     // FUNCTIONS
     // ===============================================
@@ -30,19 +31,16 @@ $(document).ready(function() {
     // When page loads, start button will be shown in order to start game
     function startScreen() {
         // creating the start button
-        startBtn = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>I Solemnly Swear That I Am Up To No Good</a></p>";
+        startBtn = "<p class='text-center main-button-container'><a class='btn btn-lg start-button' href='#' role='button'>I Solemnly Swear That I Am Up To No Good</a></p>";
         // pushing button into html
         $('#startButton').html(startBtn);
     }
-
-    // Calling load function
-    startScreen();
 
     // Function to start timer countdown
     function startTimer() {
         // Start timer countdown function
         //  Set our number counter to 100.
-        var number = 15;
+        var number = 60;
 
         //  Variable that will hold our interval ID when we execute
         //  the "run" function
@@ -63,20 +61,20 @@ $(document).ready(function() {
             //  Show the number in the #show-number tag.
             $('#timer').html("<h3>Time Remaining: " + number + "</h3>");
 
-
             //  Once number hits zero...
             if (number === 0) {
 
                 //  ...run the stop function.
                 stop();
-                
 
                 //  Alert the user that time is up.
                 console.log("Time Up!");
 
                 // Provide user with stats function
-                winCounter();
-                lossCounter();
+                scoreCounter();
+
+                // Allows user to reset game
+                // reset();
             }
         }
 
@@ -96,70 +94,104 @@ $(document).ready(function() {
     // Function to create questions
     function gameProcess() {
 
+        // Array of multiple choice questions
         var questionsArray = ["Who does Harry accidentally 'blow up' causing him to run away from Privet Drive?", "Which type of magical creature carries Sirius Black away from Hogwarts?", "Which of the following was NOT a Death Eater?", "Who destroys a horcrux first?"];
-
+        // Multiple choice answers
         var answersArray = [
             ["Marge Dursley", "Petunia Dursley", "Vernon Dursley", "Dudley Dursley"],
-            ["Dragon", "Hippogriff", "Unicorn", "Thestral"], ["Lucious Malfoy", "Bathilda Bagshot", "Bartemious Crouch, Jr", "Bellatrix Lestrange"], ["Ron Weasley", "Hermoine Granger", " Albus Dumbledore", "Harry Potter"]
+            ["Dragon", "Hippogriff", "Unicorn", "Thestral"],
+            ["Lucious Malfoy", "Bathilda Bagshot", "Bartemious Crouch, Jr", "Bellatrix Lestrange"],
+            ["Ron Weasley", "Hermoine Granger", " Albus Dumbledore", "Harry Potter"]
         ];
 
         // Question 1
-        $('#question1').html(questionsArray[0]);
-        
+        $('#question1').html("<br>" + questionsArray[0]);
+
         // Arrary of Question 1 answers
         $('#answers1').html('<label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="correct" value="option1">' + answersArray[0][0] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option2">' + answersArray[0][1] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option3">' + answersArray[0][2] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option3">' + answersArray[0][3] + '</label>')
-        
+
         // Question 2
-        $('#question2').html("<br>" + questionsArray[1]);       
+        $('#question2').html("<br>" + questionsArray[1]);
 
         // Arrary of Question 2 answers
         $('#answers2').html('<label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option1">' + answersArray[1][0] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="correct" value="option2">' + answersArray[1][1] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option3">' + answersArray[1][2] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option3">' + answersArray[1][3] + '</label>')
 
         // Question 3
         $('#question3').html("<br>" + questionsArray[2]);
-        
+
         // Arrary of Question 3 answers
         $('#answers3').html('<label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option1">' + answersArray[2][0] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="correct" value="option2">' + answersArray[2][1] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option3">' + answersArray[2][2] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option3">' + answersArray[2][3] + '</label>')
 
         // Question 4
         $('#question4').html("<br>" + questionsArray[3]);
-        
+
         // Arrary of Question 4 answers
         $('#answers4').html('<label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option1">' + answersArray[3][0] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option2">' + answersArray[3][1] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option3">' + answersArray[3][2] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="correct" value="option3">' + answersArray[3][3] + '</label>')
-
     }
 
-    function winCounter() {
+    function scoreCounter() {
 
-    	var correctAnswers = 0;
+        // Variables to count correct/wrong answers
+        var correctAnswers = 0;
+        var wrongAnswers = 0;
+        // var unanswered = 0;
 
-    	if ($('#correct:checked').length > 0) {
-    			console.log("right");
-    			correctAnswers = correctAnswers++;
-    			console.log(correctAnswers);
-			}
+        // For loop that runs through answersArray checking for id of wrong/correct in order to properly count score
+        for (i = 0; i < answersArray.length; i++) {
+
+            if ($('#correct:checked').length > 0) {
+                correctAnswers++;
+            } else if ($('#wrong:checked').length > 0) {
+                wrongAnswers++;
+            }
+        }
+
+        // Displaying score to log
+        console.log("Right: " + $('#correct:checked').length);
+        console.log("Wrong: " + $('#wrong:checked').length);
+
+        // Writing score to html, overwriting gameprocess
+        $('.gameProcess').html('<h3>Times Up!</h3><br><h3>Number Of Correct Answers: ' + $('#correct:checked').length +
+            '</h3><br><h3>Number Of Wrong Answers: ' + $('#wrong:checked').length + '</h3>');
     }
 
-    function lossCounter() {
+    // function reset() {
 
-    	if ($('#wrong:checked').length > 0) {
-    			console.log("wrong");
-    			wrongAnswers = wrongAnswers++;
-    			console.log(wrongAnswers);
-			}
-		
-    }
-    // 
+    //     // creating the reset button
+    //     resetBtn = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='#' role='button'>Mischeif Managed</a></p>";
+    //     // pushing button into html
+    //     $('.gameProcess').append(resetBtn);
+    // }
+
+    // MAIN PROCESS
+    // ===============================================
+
+    // Calling Screen load function
+    startScreen();
 
     // When start button gets clicked, game will start and populate questions and answers as radio buttons, timer countdown will start. 
     $('.start-button').click(function() {
+
+        // Hide start button
+        $(this).css("display", "none");
+
+        // Trivia title initially hidden on page load, this query will write title when start button is clicked
+        $('.jumbotron').html("<h1>Harry Potter Triva</h1>");
 
         // Calling function to start timer
         startTimer();
         // Call function to display questions and answers
         gameProcess();
-
-        // 
-
     });
+
+    // $('.reset-button').click(function() {
+
+    //     // Calling Screen load function
+
+    //     // Call to reset function for timer
+    //     // startTimer();
+
+    //     // And start game process again.
+    //     // gameProcess();
+    // });
 });

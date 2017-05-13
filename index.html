@@ -9,41 +9,43 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <!-- Psuedo Code
-	1. HTML Structure of game needs to be built.
-	2. When page loads, a start button will need to be pressed in order to start the game.
-	3. After button is pressed, questions will populate, and a timer countdown will begin.
-	4. Each question must consist of radio buttons that are multiple choice anserwrs for each question.
-	5. After time countdown hits 0, user will be shown a new page with correct answers, wrong answers, and unanswered questions. Regardless if they selected an answer for each question.
+    1. HTML Structure of game needs to be built.
+    2. When page loads, a start button will need to be pressed in order to start the game.
+    3. After button is pressed, questions will populate, and a timer countdown will begin.
+    4. Each question must consist of radio buttons that are multiple choice anserwrs for each question.
+    5. After time countdown hits 0, user will be shown a new page with correct answers, wrong answers, and unanswered questions. Regardless if they selected an answer for each question.
  -->
 
-<body>
+<body class="background">
     <div class="jumbotron text-center">
-        <h1>Harry Potter Triva!</h1>
-        </div>
-        <div class="gameProcess">
+        <!-- <h1>Harry Potter Triva!</h1> -->
+    </div>
+    <div class="gameProcess">
         <div id="startButton"></div>
-        <div class= "h3" id="timer"></div>
+        <div class="h3" id="timer"></div>
         <form>
-        <div class="h3" id="question1"></div>
-        <div class="h4" id="answers1"></div>
-        </form>
-        <form>
-        <div class="h3" id="question2"></div>
-        <div class="h4" id="answers2"></div>
-        </form>
-        <div class="h3" id="question3"></div>
-        <div class="h4" id="answers3"></div>
+            <div class="questions" id="question1"></div>
+            <div class="answers" id="answers1"></div>
         </form>
         <form>
-        <div class="h3" id="question4"></div>
-        <div class="h4" id="answers4"></div>
+            <div class="questions" id="question2"></div>
+            <div class="answers" id="answers2"></div>
         </form>
-</div>
-        <!-- Javascript to load after all HTML has been processed -->
-        <script type="text/javascript" src="assets/javascript/game.js"></script>
+        <form>
+            <div class="questions" id="question3"></div>
+            <div class="answers" id="answers3"></div>
+        </form>
+        <form>
+            <div class="questions" id="question4"></div>
+            <div class="answers" id="answers4"></div>
+        </form>
+    </div>
+    <!-- Javascript to load after all HTML has been processed -->
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 
 </html>
