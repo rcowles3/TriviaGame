@@ -127,6 +127,12 @@ $(document).ready(function() {
 
         // Arrary of Question 4 answers
         $('#answers4').html('<label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option1">' + answersArray[3][0] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option2">' + answersArray[3][1] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="wrong" value="option3">' + answersArray[3][2] + '</label><label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="correct" value="option3">' + answersArray[3][3] + '</label>')
+
+        // Creating the submit button
+        submitBtn = "<p class='text-center main-button-container'><a class='btn btn-sm submit-button' href='#' role='button'>Submit</a></p>";
+
+        // pushing button into html
+        $('#submitButton').html(submitBtn);
     }
 
     function scoreCounter() {
@@ -154,6 +160,13 @@ $(document).ready(function() {
         $('.gameProcess').html('<h3>Times Up!</h3><br><h3>Number Of Correct Answers: ' + $('#correct:checked').length +
             '</h3><br><h3>Number Of Wrong Answers: ' + $('#wrong:checked').length + '</h3>');
     }
+
+    // Function to handle submission before timers up
+    $('#submitButton').click(function(){
+
+        // Display user score
+        scoreCounter(); 
+    });
 
     // function reset() {
 
